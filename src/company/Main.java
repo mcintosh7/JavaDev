@@ -11,5 +11,11 @@ public class Main {
         cat.takeForAWalk();
         cat.feed(0.3);
 
+        Car Opel = new Car("opel");
+
+
+
+
+
     }
 }
