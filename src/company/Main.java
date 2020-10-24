@@ -11,8 +11,10 @@ public class Main {
         cat.takeForAWalk();
         cat.feed(0.3);
 
-        Car opel = new Car("opel", "astra", 2010, "blue");
+        Car opel = new Car("Opel", "Astra", 2010, "blue");
         System.out.println(opel.mark + " " + opel.model + " " + opel.year);
+
+        Car audi = new Car("Audi", "A4", 2018, "pink");
 
     }
 }
