@@ -11,11 +11,8 @@ public class Main {
         cat.takeForAWalk();
         cat.feed(0.3);
 
-        Car Opel = new Car("opel");
-
-
-
-
+        Car opel = new Car("opel", "astra", 2010, "blue");
+        System.out.println(opel.mark + " " + opel.model + " " + opel.year);
 
     }
 }
