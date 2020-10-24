@@ -31,8 +31,5 @@ public class Animal {
     }
 
 
-    Double getWeight() {
-        return weight;
-    }
 
 }
