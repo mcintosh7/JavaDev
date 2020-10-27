@@ -5,31 +5,33 @@ import java.io.File;
 public class Animal {
     final String species;
     static String name;
-    private Double weight = 10.0;
+    public Double weight;
     File pic;
 
-    public Animal(String species) {
+    public Animal(String species, Double weight) {
         this.species = species;
+        this.weight = weight;
     }
 
-    void feed(Double foodWeight) {
+    void feed(double foodWeight) {
         if (this.weight <= 0) {
             System.out.println("to late");
         } else {
-            System.out.println("thx for food" + this.weight);
             this.weight += foodWeight;
+            System.out.println("thx for food" + this.weight);
         }
     }
 
-    void takeForAWalk() {
+    void takeForAWalk(double walkWeight) {
         if (this.weight <= 0) {
-            System.out.println("you cannot walk with a dead pet");
+            //System.out.println("you cannot walk with a dead pet");
         } else {
-            this.weight--;
-            System.out.println("thx for walk" + this.weight);
+            this.weight -= walkWeight;
+            //System.out.println("thx for walk" + this.weight);
         }
-    }
 
+
+    }
 
 
 }
