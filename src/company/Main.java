@@ -2,7 +2,7 @@ package company;
 
 import company.creatures.Human;
 import company.devices.Car;
-import company.devices.Device;
+import company.devices.Phone;
 
 public class Main {
 
@@ -37,9 +37,11 @@ public class Main {
         //System.out.println(me instanceof Human);
         //System.out.println(me instanceof Animal);
 
-        Device nowy_model = new Device();
-        System.out.println(nowy_model);
+        Phone nokia = new Phone(2010, "nokia", "3310i");
+        Car opel2 = new Car("opel", "corsa", 2011, "blue", 15000.0);
 
+        System.out.println(nokia);
+        System.out.println(opel2);
 
     }
 }

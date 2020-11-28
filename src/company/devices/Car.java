@@ -6,9 +6,7 @@ public class Car extends Device {
 
 
     public Car(String producer, String model, int year, String color, Double value) {
-        this.producer = producer;
-        this.model = model;
-        this.year = year;
+        super(producer, model, year);
         this.color = color;
         this.value = value;
     }

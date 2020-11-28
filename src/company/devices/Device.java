@@ -1,9 +1,15 @@
 package company.devices;
 
 public class Device {
-    public String producer;
-    public String model;
-    public int year;
+    final public String producer;
+    final public String model;
+    final public int year;
+
+    public Device(String producer, String model, int year) {
+        this.producer = producer;
+        this.model = model;
+        this.year = year;
+    }
 
     public String toString() {
         return this.producer + " " + this.model + " " + this.year;
