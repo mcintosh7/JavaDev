@@ -14,7 +14,7 @@ public class Books {
         this.borrower = borrower;
         this.borrowerId = borrowerId;
     }
-
+/*
     public static void main(String[] args) {
         Books bookOne = new Books("Pan Tadeusz", "Adam Mickiewicz", true, "Jan Kowalski", 1);
 
@@ -24,5 +24,6 @@ public class Books {
             System.out.println("Możesz wypożyczyć książkę " + bookOne.title);
         }
     }
+    */
 }
 

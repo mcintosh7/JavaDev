@@ -1,28 +1,44 @@
 package company;
 
+import company.creatures.Human;
+import company.devices.Car;
+import company.devices.Device;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Animal cat = new Animal("cat", 10.0);
-        //double i = cat.weight;
+       /*
 
-        while (cat.weight > 0) {
-            cat.takeForAWalk(1.5);
-            System.out.println("waga zwierzęcia o gatunku" + " " + cat.species + " to " + cat.weight);
-        }
-
-        /*cat.takeForAWalk(6);
-        cat.feed(0.1);
-        cat.feed(0.1);
-        cat.takeForAWalk(5);
+        Animal cat = new Animal("cat");
+        cat.takeForAWalk();
         cat.feed(0.5);
+        cat.feed(0.3);
+        cat.takeForAWalk();
+        cat.feed(0.3);
 
-        Car opel = new Car("Opel", "Astra", 2010, "blue");
-        System.out.println(opel.mark + " " + opel.model + " " + opel.year);
+        cat = new Animal("tiger");
+        cat.feed(2.0);
 
-        Car audi = new Car("Audi", "A4", 2018, "pink");
         */
+
+        Human me = new Human();
+        System.out.println(me.getSalary());
+
+        me.setSalary(70000000.0);
+        System.out.println(me.getSalary());
+
+        Car opel = new Car("Opel", "Astra", 1999, "black", 5000.5);
+        me.setCar(opel);
+
+        System.out.println(me.getCar().model + " " + me.getCar().producer + " " + me.getCar().year);
+        //System.out.println(me.);
+
+        //System.out.println(me instanceof Human);
+        //System.out.println(me instanceof Animal);
+
+        Device nowy_model = new Device();
+        System.out.println(nowy_model);
 
 
     }

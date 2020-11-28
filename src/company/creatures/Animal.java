@@ -1,4 +1,4 @@
-package company;
+package company.creatures;
 
 import java.io.File;
 
@@ -7,6 +7,12 @@ public class Animal {
     static String name;
     public Double weight;
     File pic;
+
+    public String toString() {
+        return this.species + " " + name + " " + this.weight;
+    }
+
+
 
     public Animal(String species, Double weight) {
         this.species = species;
@@ -29,9 +35,8 @@ public class Animal {
             this.weight -= walkWeight;
             //System.out.println("thx for walk" + this.weight);
         }
-
-
     }
+
 
 
 }
