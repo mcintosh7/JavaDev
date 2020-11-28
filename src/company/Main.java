@@ -43,5 +43,7 @@ public class Main {
         System.out.println(nokia);
         System.out.println(opel2);
 
+        opel2.turnOn();
+
     }
 }

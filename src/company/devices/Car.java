@@ -1,6 +1,6 @@
 package company.devices;
 
-public class Car extends Device {
+public class Car extends Device implements Saleable {
     private final String color;
     public Double value;
 
@@ -17,5 +17,21 @@ public class Car extends Device {
 
     public void setValue(Double value) {
         this.value = value;
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("put key");
+        System.out.println("press button");
+    }
+
+    @Override
+    public void sell() {
+        System.out.println("method sell");
+    }
+
+    @Override
+    public void sellOnCredit() {
+        System.out.println("method sellOnCredit");
     }
 }

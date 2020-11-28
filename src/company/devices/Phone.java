@@ -9,6 +9,11 @@ public class Phone extends Device {
     }
 
 
+    @Override
+    public void turnOn() {
+        System.out.println("press and hold button");
+    }
+
     public String toString() {
         return this.producer + " " + this.model + " " + this.screenSize;
     }
