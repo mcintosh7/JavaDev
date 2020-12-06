@@ -22,28 +22,25 @@ public class Main {
 
         */
 
-        Human me = new Human();
-        System.out.println(me.getSalary());
-
-        me.setSalary(70000000.0);
-        System.out.println(me.getSalary());
-
-        Car opel = new Car("Opel", "Astra", 1999, "black", 5000.5);
-        me.setCar(opel);
-
-        System.out.println(me.getCar().model + " " + me.getCar().producer + " " + me.getCar().year);
-        //System.out.println(me.);
-
-        //System.out.println(me instanceof Human);
-        //System.out.println(me instanceof Animal);
+        Human me = new Human("Arek", "Chmal");
+        me.setSalary(10.0);
 
         Phone nokia = new Phone(2010, "nokia", "3310i");
-        Car opel2 = new Car("opel", "corsa", 2011, "blue", 15000.0);
+        Car opel = new Car("opel", "corsa", 2011, "blue", 15000.0);
 
-        System.out.println(nokia);
-        System.out.println(opel2);
+        me.phone = nokia;
+        me.setCar(opel);
 
-        opel2.turnOn();
+        Human brotherInLaw = new Human("Andrzej", "Tester");
+        brotherInLaw.setCash(3000.0);
+
+        try {
+            nokia.sell(me, brotherInLaw, 2000.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("dalsza logika");
 
     }
 }

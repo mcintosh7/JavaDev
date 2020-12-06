@@ -1,5 +1,7 @@
 package company.devices;
 
+import company.creatures.Human;
+
 public class Car extends Device implements Saleable {
     private final String color;
     public Double value;
@@ -26,12 +28,29 @@ public class Car extends Device implements Saleable {
     }
 
     @Override
-    public void sell() {
-        System.out.println("method sell");
+    public String toString() {
+        return producer + " " + model + " " + year + " " + color + " " + value;
     }
 
     @Override
-    public void sellOnCredit() {
-        System.out.println("method sellOnCredit");
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (seller.getCash() == null || buyer.getCash() == null) {
+            throw new Exception("Musisz zdefiniować stan portfela");
+        }
+        if (seller.getCar() == null) {
+            System.out.println("Nie masz samochodu");
+            throw new Exception("Brak telefonu");
+        }
+        if (buyer.getCash() < price) {
+            System.out.println("Kupujący, nie masz kasy ");
+            throw new Exception("Bak pieniędzy");
+        }
+        buyer.setCash(buyer.getCash() - price);
+        seller.setCash(seller.getCash() + price);
+        buyer.setCar(seller.getCar());
+        seller.setCar(null);
+        System.out.println("telefon sprzedano za " + price + " od " + seller.firstName + " do " + buyer.firstName);
+
     }
+
 }
