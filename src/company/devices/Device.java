@@ -1,23 +1,27 @@
 package company.devices;
 
 public abstract class Device {
+    final public Integer yearOfProduction;
     final public String producer;
     final public String model;
-    final public int year;
+    public Double value;
 
-    public Device(String producer, String model, int year) {
+    public Device(Integer yearOfProduction, String producer, String model) {
+        this.yearOfProduction = yearOfProduction;
         this.producer = producer;
         this.model = model;
-        this.year = year;
     }
 
     public abstract void turnOn();
 
+    @Override
     public String toString() {
-        return this.producer + " " + this.model + " " + this.year;
+        return "Device{" +
+                "yearOfProduction=" + yearOfProduction +
+                ", producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                '}';
     }
-
-
 }
 
 

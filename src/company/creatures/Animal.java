@@ -4,52 +4,69 @@ import company.devices.Saleable;
 
 import java.io.File;
 
-public class Animal implements Saleable {
+public abstract class Animal implements Saleable, Feedable {
+
     final static Double MIN_WEIGHT = 2.0;
+    final static Double DEFAULT_FOOD_WEIGHT = 1.0;
+
     final public String species;
     public Boolean isAlive = true;
     public String name;
-    private Double weight = 10.0;
     File pic;
+    private Double weight = 10.0;
 
-    public String toString() {
-        return this.species + " " + name + " " + this.weight;
-    }
-
-    //konstruktor klasy
     public Animal(String species) {
         this.species = species;
     }
 
-    void feed(double foodWeight) {
-        if (this.weight <= 0) {
-            System.out.println("to late");
+    public void feed() {
+        if (this.species == "dog") {
+            feed(2.0);
+        } else if (this.species == "cat") {
+            feed(0.5);
+        } else if (this instanceof FarmAnimal) {
+            feed(5.0);
         } else {
+            feed(DEFAULT_FOOD_WEIGHT);
+        }
+    }
+
+    public void feed(double foodWeight) {
+        if (this.isAlive) {
             this.weight += foodWeight;
-            System.out.println("thx for food" + this.weight);
-        }
-    }
-
-    void takeForAWalk(double walkWeight) {
-        if (this.weight <= 0) {
-            System.out.println("you cannot walk with a dead pet");
+            System.out.println("thx for food");
         } else {
-            this.weight -= walkWeight;
-            System.out.println("thx for walk" + this.weight);
+            System.out.println("too late");
         }
     }
 
-    //getter
+
+    public void takeForAWalk() {
+        if (this.isAlive) {
+            this.weight--;
+            System.out.println("thx for a walk, bro");
+            if (this.weight < MIN_WEIGHT) {
+                this.isAlive = false;
+            }
+        } else {
+            System.out.println("go for jail");
+            System.out.println("nice");
+        }
+    }
+
     public Double getWeight() {
         return weight;
     }
 
-    //setter
-    public void setWeight(Double weight) {
-        this.weight = weight;
+    void setWeight(Double newWeight) {
+        this.weight = newWeight;
     }
 
-    //nadpisana metoda z interface'u Saleable
+    public String toString() {
+        return this.species + " " + this.name + " isAlive: " + this.isAlive;
+    }
+
+
     @Override
     public void sell(Human seller, Human buyer, Double price) throws Exception {
 
